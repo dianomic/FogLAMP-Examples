@@ -1,0 +1,7 @@
+__pycache__
+
+# Compiled Object files
+*.pyc
+
+# Test
+.pytest_cache
