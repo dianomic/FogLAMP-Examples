@@ -59,7 +59,7 @@ def plugin_init(config):
     """ Initialise the plugin.
 
     Args:
-        config: JSON configuration document for the South device configuration category
+        config: JSON configuration document for the South plugin configuration category
     Returns:
         handle: JSON object to be used in future calls to the plugin
     Raises:
