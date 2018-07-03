@@ -32,19 +32,10 @@ set_files_ownership () {
 }
 
 add_service () {
-    output=$(curl -sX POST http://localhost:8081/foglamp/service -d '{"name": "poll_template", "type": "south", "plugin": "poll_template"}')
-    service_id=$(echo $output | awk -F '"id": ' '{print $2}' | awk -F \" '{print $2}')
-    echo $service_id
-}
-
-enable_service () {
-    service_id=$1
-    echo $service_id
-    output=$(curl -X PUT -d '{"enabled": true}' http://localhost:8081/foglamp/schedule/$service_id)
-    echo $output
+    output=$(curl -sX POST http://localhost:8081/foglamp/service -d '{"name": "Poll Template", "type": "south", "plugin": "poll_template", "enabled": true}')
+    echo ${output}
 }
 
 set_files_ownership
-SERVICE_ID=$(add_service)
-enable_service $SERVICE_ID
+add_service
 echo "poll_template plugin installed."

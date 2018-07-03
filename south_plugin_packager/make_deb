@@ -75,7 +75,7 @@ foglamp_version=`cat ${GIT_ROOT}/VERSION.south.poll_template | tr -d ' ' | grep 
 BUILD_ROOT="${GIT_ROOT}/packages/Debian/build"
 
 # Final package name
-package_name="foglamp-south-poll_template-${version}-${architecture}"
+package_name="foglamp-south-poll-template-${version}-${architecture}"
 
 # Print the summary of findings
 echo "The package root directory is         : ${GIT_ROOT}"
@@ -108,11 +108,13 @@ mkdir "${package_name}"
 echo -n "Populating the package and updating version file..."
 cd "${package_name}"
 cp -R ${GIT_ROOT}/packages/Debian/${architecture}/* .
-sed -i "s/Version: 0.0/Version: $version/g" DEBIAN/control
+sed -i "s/Version: 1.0.0/Version: $version/g" DEBIAN/control
 sed -i "s/Depends: foglamp/Depends: foglamp (=$foglamp_version)/g" DEBIAN/control
 
 mkdir -p usr/local/foglamp
 cd usr/local/foglamp
+# Make sure to copy python directory with tree structure
+# `python/foglamp/plugins/south/poll_template/..` in the GIT_ROOT directory
 cp -R ${GIT_ROOT}/python .
 cp -R ${GIT_ROOT}/VERSION.south.poll_template .
 echo "Done."
