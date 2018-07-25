@@ -21,7 +21,7 @@
 ## @postinst DEBIAN/postinst
 ## This script is used to execute post installation tasks.
 ##
-## Author: Ivan Zoratti
+## Author: Praveen Garg
 ##
 ##--------------------------------------------------------------------
 
@@ -38,4 +38,4 @@ add_service () {
 
 set_files_ownership
 add_service
-echo "poll_template plugin installed."
+echo "Poll template plugin installed."
