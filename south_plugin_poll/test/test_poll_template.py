@@ -7,7 +7,7 @@
 from python.foglamp.plugins.south.poll_template import poll_template
 
 __author__ = "Praveen Garg"
-__copyright__ = "Copyright (c) 2017 OSIsoft, LLC"
+__copyright__ = "Copyright (c) 201 Dianomic Systems"
 __license__ = "Apache 2.0"
 __version__ = "${VERSION}"
 

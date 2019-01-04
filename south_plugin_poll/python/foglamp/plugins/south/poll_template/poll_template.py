@@ -15,7 +15,7 @@ from foglamp.common import logger
 from foglamp.services.south import exceptions
 
 __author__ = "Stefano Simonelli"
-__copyright__ = "Copyright (c) 2017 OSIsoft, LLC"
+__copyright__ = "Copyright (c) 2018 Dianomic Systems"
 __license__ = "Apache 2.0"
 __version__ = "${VERSION}"
 
